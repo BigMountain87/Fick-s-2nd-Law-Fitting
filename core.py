@@ -87,13 +87,15 @@ class core():
             # print(np.abs((error - pre_error)/error))
         
         print("Done!")
-        print(D_array[-1])
+        print("D : "+ D_array[-1] +" [m^2/s]") # D 값 출력 부분 수정, 단위 추가
         return D_array[-1]
 
     def writeCSVfile(self,time,J):
         dt = datetime.now()
         dtname = dt.strftime("%Y-%m-%d %H:%M:%S")
         savename = self.filename[0:len(self.filename)-4] + "_result " + dtname + ".csv"
+        print("File saved!")
+        print("File name : " + savename) # 파일 이름명 출력
         f = open(savename,'w',newline='')
         wr = csv.writer(f)
         
