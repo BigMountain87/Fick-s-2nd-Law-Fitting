@@ -80,14 +80,14 @@ class core():
                 D_array.append(D_value)
                 error = np.average((J - J_temp)/J.T)
                 error_array.append(error)
-                
+                # print(D_value)
                 i = i + 1
                 # D_step = D_value의 1%
                 D_value = D_value + D_value/100
             # print(np.abs((error - pre_error)/error))
         
         print("Done!")
-        print("D : "+ D_array[-1] +" [m^2/s]") # D 값 출력 부분 수정, 단위 추가
+        print("D : "+ str(D_array[-1]) +" [m^2/s]") # D 값 출력 부분 수정, 단위 추가, float 형태를 string으로 변환
         return D_array[-1]
 
     def writeCSVfile(self,time,J):
